@@ -7,7 +7,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Drogaria-manterCategoria-CaroolMexeu</title>
+	<title>Drogaria</title>
 </h:head>
 <h:body>
 	<h:form id="formulario">
@@ -22,7 +22,7 @@
 		</h:panelGrid>
 
 		<h:panelGrid columns="4">
-			<p:commandButton value="Salvar" actionListener="#{categoriaBean.salvar}" update=":formulario:mensagem :formulario:painelDados" />
+			<p:commandButton value="Salvar" actionListener="#{categoriaBean.salvar}" update=":formulario:mensagem :formulario:painelDados :formulario:tabela" />
 			<p:commandButton value="Limpar" />
 			<p:commandButton value="Excluir" />
 			<p:commandButton value="Editar" />
@@ -30,7 +30,7 @@
 
 		<p:separator />
 
-		<p:dataTable emptyMessage="Nenhum registro encontrado."
+		<p:dataTable emptyMessage="Nenhum registro encontrado." id="tabela"
 			paginator="true" value="#{categoriaBean.categorias}" var="cursor" rows="3" sortBy="#{cursor.codigo}">
 			<p:column headerText="Código">
 				<h:outputText value="#{cursor.codigo}"/>

@@ -22,21 +22,14 @@ public class CategoriaBean {
 		CategoriaDAO categoriaDAO = new CategoriaDAO();
 		categoriaDAO.salvar(categoria);
 		Messages.addGlobalInfo("Categoria salva com sucesso");
-		categoria = new Categoria();
-		
-		listar();
+		iniciar();
 	}
-	
-	public void listar(){
-		CategoriaDAO categoriaDAO = new CategoriaDAO();
-		categorias = categoriaDAO.listar();
-	}
-	
 	
 	@PostConstruct
 	public void iniciar(){
 		categoria = new Categoria();
-		listar();
+		CategoriaDAO categoriaDAO = new CategoriaDAO();
+		categorias = categoriaDAO.listar();
 	}
 	
 	public Categoria getCategoria() {
