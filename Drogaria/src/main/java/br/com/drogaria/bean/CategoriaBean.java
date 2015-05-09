@@ -20,8 +20,20 @@ public class CategoriaBean {
 	
 	public void salvar(){
 		CategoriaDAO categoriaDAO = new CategoriaDAO();
-		categoriaDAO.salvar(categoria);
-		Messages.addGlobalInfo("Categoria salva com sucesso");
+		if(categoria.getCodigo()==null){
+			categoriaDAO.salvar(categoria);
+			Messages.addGlobalInfo("Categoria salva com sucesso");
+		}else{
+			categoriaDAO.editar(categoria);
+			Messages.addGlobalInfo("Categoria alterada com sucesso");
+		}
+		iniciar();
+	}
+	
+	public void excluir(){
+		CategoriaDAO categoriaDAO = new CategoriaDAO();
+		categoriaDAO.excluir(categoria);
+		Messages.addGlobalInfo("Categoria excluída com sucesso");
 		iniciar();
 	}
 	
