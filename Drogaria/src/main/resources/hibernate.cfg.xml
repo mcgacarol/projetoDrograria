@@ -8,9 +8,9 @@
 	<session-factory>
 		<!-- Configurações da conexão -->
 		<property name="connection.driver_class">org.postgresql.Driver</property>
-		<property name="connection.url">jdbc:postgresql://127.0.0.1:5432/drogaria</property>
+		<property name="connection.url">jdbc:postgresql://127.0.0.1:5432/Drogaria</property>
 		<property name="connection.username">postgres</property>
-		<property name="connection.password">postgres</property>
+		<property name="connection.password">moni1805</property>
 
 		<!-- Dialeto SQL -->
 		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>

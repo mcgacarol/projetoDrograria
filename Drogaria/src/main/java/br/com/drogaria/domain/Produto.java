@@ -23,6 +23,31 @@ import javax.persistence.TemporalType;
 @Entity
 @SequenceGenerator(name = "produtoSequence", sequenceName = "produtoSequence", allocationSize = 1)
 public class Produto implements Serializable {
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Produto other = (Produto) obj;
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
+			return false;
+		return true;
+	}
+
 	// Anotação que define qual atributo será a chave primária
 	// Anotação que define qual sequência irá gerar a chave primária
 	@Id
